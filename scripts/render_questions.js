@@ -12,9 +12,13 @@ let questionValues = [100, 200, 300, 400, 500];
  *      HINT: Use a for/of loop 
  *      Need more help? Check out https://mzl.la/3lDHxIq or ask a volunteer.
  * 
- * 3. Create an HTML string for each question. It should look like this:
- *      <div class='question'><div class='question-cell'>VALUE</div></div>
- * 
+ * 3. Create an HTML string for each column and question. It should look like this:
+ *      <div class='questions-column'>
+ *          <div class='question-cell'>VALUE</div>
+ *          ...
+ *          <div class='question-cell'>VALUE</div>
+ *      </div>
+ *
  * 4. Replace VALUE in each string with the question's value.
  *      For example, the $500 question would be:
  *          <div class='question'><div class='question-title'>$500</div></div>
@@ -37,9 +41,9 @@ let questionValues = [100, 200, 300, 400, 500];
 
 function renderQuestions() {
     for(let i = 0; i < numCategories; i++) {
+//question column does outsided the nested loop, and then question value loops within each column per catagory
         questionValues.forEach(val => {
-            $("#questions").append(`<div class="question"><div class="question-title">${val}</div></div>`);
-            $("#questions").append(`<div class='question-cell' data-category="${i}">${i}</div>`);
+            $("#questions").append(``);
         })
     }
 }
